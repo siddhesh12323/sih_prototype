@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sih_prototype/screens/sizedbox.dart';
+import 'package:sih_prototype/screens/view_image.dart';
 
 class FarmerQuestionDetailPage extends StatefulWidget {
   String problemName;
@@ -30,7 +31,15 @@ class _FarmerQuestionDetailPageState extends State<FarmerQuestionDetailPage> {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             children: [
-              Image.asset('images/${widget.problemImage}'),
+              InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return ViewDetailedImage(
+                          problemImage: widget.problemImage);
+                    }));
+                  },
+                  child: Image.asset('images/${widget.problemImage}')),
               sizedBox(20, 0),
               Text(widget.problemDescription,
                   style: const TextStyle(fontSize: 16)),

@@ -67,7 +67,11 @@ class _ExpertHomeScreenState extends State<ExpertHomeScreen> {
                               child: questionCard(
                                   'plant$index.jpg',
                                   'Plant $index Problem',
-                                  'Plant $index Problem Description'),
+                                  'Plant $index Problem Description',
+                                  MediaQuery.of(context).size.width - 32,
+                                  ((9 / 16) *
+                                      (MediaQuery.of(context).size.width -
+                                          32))),
                             ),
                           );
                   }))),
