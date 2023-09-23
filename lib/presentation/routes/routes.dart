@@ -18,9 +18,9 @@ class AppRouter {
       case '/signup':
         return MaterialPageRoute(builder: (_) => const SignUpScreen());
       case '/farmerhome':
-        return MaterialPageRoute(builder: (_) => const FarmerHomeScreen());
+        return MaterialPageRoute(builder: (_) => const FarmerHomeScreenNav());
       case '/experthome':
-        return MaterialPageRoute(builder: (_) => const ExpertHomeScreen());
+        return MaterialPageRoute(builder: (_) => const ExpertHomeScreenNav());
       case '/farmeraskpage':
         return MaterialPageRoute(builder: (_) => const FarmerAskPage());
       case '/postsuccesspage':
