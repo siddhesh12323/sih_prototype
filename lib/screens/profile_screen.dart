@@ -32,7 +32,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     Text('Select Language', style: TextStyle(fontSize: 16)),
                     sizedBox(10, 0),
                     DropdownMenu(
-                      hintText: 'Select your role',
+                      hintText: 'English',
                       dropdownMenuEntries: const [
                         DropdownMenuEntry(value: 'English', label: 'English'),
                         DropdownMenuEntry(value: 'Hindi', label: 'Hindi'),
