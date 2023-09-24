@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:sih_prototype/screens/sizedbox.dart';
 
-class ExpertChatPage extends StatefulWidget {
-  String userName;
-  String userMessage;
-  Color profileBackgroundColor;
-  ExpertChatPage(
-      {super.key,
-      required this.userName,
-      required this.userMessage,
-      required this.profileBackgroundColor});
+class ExpertChatPageFake extends StatefulWidget {
+  String image;
+  String problemName;
+  ExpertChatPageFake({
+    super.key,
+    required this.image,
+    required this.problemName,
+  });
 
   @override
-  State<ExpertChatPage> createState() => _ExpertChatPageState();
+  State<ExpertChatPageFake> createState() => _ExpertChatPageFakeState();
 }
 
-class _ExpertChatPageState extends State<ExpertChatPage> {
+class _ExpertChatPageFakeState extends State<ExpertChatPageFake> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,15 +24,14 @@ class _ExpertChatPageState extends State<ExpertChatPage> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             CircleAvatar(
-              backgroundColor: widget.profileBackgroundColor,
+              backgroundColor: Colors.green,
               child: const Icon(
                 Icons.person,
                 color: Colors.black,
               ),
             ),
             sizedBox(0, 8),
-            Text(widget.userName,
-                style: Theme.of(context).textTheme.headlineSmall),
+            Text('Ranjit', style: Theme.of(context).textTheme.headlineSmall),
           ],
         ),
       ),
@@ -46,7 +44,7 @@ class _ExpertChatPageState extends State<ExpertChatPage> {
                 Row(
                   children: [
                     CircleAvatar(
-                      backgroundColor: widget.profileBackgroundColor,
+                      backgroundColor: Colors.green,
                       child: const Icon(
                         Icons.person,
                         color: Colors.black,
@@ -54,47 +52,35 @@ class _ExpertChatPageState extends State<ExpertChatPage> {
                     ),
                     sizedBox(0, 4),
                     Container(
-                      width: 50,
-                      height: 40,
+                      width: MediaQuery.of(context).size.width - 100,
+                      height: ((12 / 16) *
+                          (MediaQuery.of(context).size.width - 100)),
                       decoration: BoxDecoration(
                         color: Colors.grey[300],
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      child: Center(
-                        child: Text(
-                          widget.userMessage,
-                        ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(8, 8, 0, 0),
+                            child: Text(
+                              widget.problemName,
+                            ),
+                          ),
+                          sizedBox(4, 0),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Image.asset(
+                              'images/${widget.image}',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ],
                       ),
                     )
                   ],
                 ),
-                sizedBox(10, 0),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Container(
-                      width: 50,
-                      height: 40,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[300],
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Center(
-                        child: Text(
-                          'Hi!',
-                        ),
-                      ),
-                    ),
-                    sizedBox(0, 4),
-                    CircleAvatar(
-                      backgroundColor: Colors.redAccent,
-                      child: const Icon(
-                        Icons.person,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ],
-                )
               ],
             ),
             Align(
@@ -114,7 +100,7 @@ class _ExpertChatPageState extends State<ExpertChatPage> {
                       Expanded(
                         child: TextField(
                           decoration: InputDecoration(
-                            hintText: '  Type a message',
+                            hintText: '  Type your advice',
                             border: InputBorder.none,
                           ),
                         ),

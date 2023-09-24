@@ -1,9 +1,12 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:sih_prototype/presentation/animations/page_transition.dart';
 import 'package:sih_prototype/presentation/routes/routes.dart';
-import 'package:sih_prototype/screens/login_screen.dart';
+import 'package:sih_prototype/screens/splash_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -23,7 +26,7 @@ class MyApp extends StatelessWidget {
           },
         ),
       ),
-      home: const LoginScreen(),
+      home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: (settings) => _appRouter.onGenerateRoute(settings),
     );

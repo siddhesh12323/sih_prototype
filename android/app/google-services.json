@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "906182654672",
+    "project_id": "sih2023-ee962",
+    "storage_bucket": "sih2023-ee962.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:906182654672:android:948f9d7e8fbf5b81467cd5",
+        "android_client_info": {
+          "package_name": "com.siddheshkdev.sihprototype"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMK1wzoNQpaNqCg4KWIX_D7Lr_H_V0iIg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

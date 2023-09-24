@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:sih_prototype/presentation/utils.dart';
 import 'package:sih_prototype/screens/sizedbox.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -9,6 +11,7 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  final _auth = FirebaseAuth.instance;
   String language = 'English';
   @override
   Widget build(BuildContext context) {
@@ -62,7 +65,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
               sizedBox(10, 0),
               InkWell(
                 onTap: () {
-                  //! LOG OUT
+                  _auth.signOut().then((value) {
+                    Navigator.pushNamed(context, '/login');
+                  }).onError((error, stackTrace) {
+                    Utils().toastMessage(error.toString());
+                  });
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width - 32,

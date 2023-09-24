@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sih_prototype/screens/sizedbox.dart';
 import 'package:sih_prototype/screens/view_image.dart';
 
+import 'expert_chat_page_fake.dart';
+
 class ExpertQuestionDetailPage extends StatefulWidget {
   String problemName;
   String problemDescription;
@@ -46,7 +48,11 @@ class _ExpertQuestionDetailPageState extends State<ExpertQuestionDetailPage> {
               sizedBox(20, 0),
               InkWell(
                 onTap: () {
-                  //! NAVIGATE TO ANSWER QUESTION PAGE
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return ExpertChatPageFake(
+                        image: widget.problemImage,
+                        problemName: widget.problemName);
+                  }));
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width - 32,
