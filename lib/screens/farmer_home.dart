@@ -74,11 +74,16 @@ class _FarmerHomeScreenState extends State<FarmerHomeScreen> {
         title: Text('Hi Farmer',
             style: Theme.of(context).textTheme.headlineMedium),
         actions: [
-          CircleAvatar(
-            backgroundColor: Colors.green,
-            child: const Icon(
-              Icons.person,
-              color: Colors.black,
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, '/profilepage');
+            },
+            child: CircleAvatar(
+              backgroundColor: Colors.green,
+              child: const Icon(
+                Icons.person,
+                color: Colors.black,
+              ),
             ),
           ),
           sizedBox(0, 10)
